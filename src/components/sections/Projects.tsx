@@ -1,6 +1,7 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { projects } from '@/utils';
+import { IProject } from '@/types';
 
 export const Projects: React.FC = React.memo(() => {
   const { ref, inView } = useInView({ threshold: 0.1 });
@@ -31,7 +32,7 @@ export const Projects: React.FC = React.memo(() => {
     }
   };
 
-  const renderProjectLinks = (project: any): JSX.Element | null => {
+  const renderProjectLinks = (project: IProject): JSX.Element | null => {
     if (!project.urls) return null;
 
     return (
