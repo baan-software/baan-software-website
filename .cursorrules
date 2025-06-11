@@ -1,0 +1,63 @@
+# Baan Software Website - Cursor Rules
+
+## Project Structure
+- Use TypeScript for all code
+- Implement interfaces for all classes
+- Use enums for constants and type-safe values
+- Follow clean architecture principles
+
+## Code Style
+- Use functional components with hooks
+- Prefer arrow functions for components
+- Use camelCase for variables and functions
+- Use PascalCase for components and interfaces
+- Use SCREAMING_SNAKE_CASE for enums
+
+## File Organization
+- Components in `src/components/`
+- Types and interfaces in `src/types/`
+- Enums in `src/enums/`
+- Utilities in `src/utils/`
+- Use index files for clean imports
+
+## React Best Practices
+- Use React.memo for performance optimization when needed
+- Implement proper prop typing with interfaces
+- Use useCallback and useMemo appropriately
+- Prefer composition over inheritance
+
+## TypeScript Standards
+- Always define return types for functions
+- Use strict TypeScript settings
+- Avoid `any` type - use proper typing
+- Use union types and generics when appropriate
+
+## Design System
+- Clean, modern, minimalist design
+- Sharp, professional, boutique consultancy vibe
+- Avoid Material UI patterns, rounded cards, or bubbly elements
+- Use subtle hover effects and smooth animations
+- Prefer grid-based layouts with whitespace
+- Use sharp typography with tight spacing
+
+## Performance
+- Implement lazy loading for components
+- Optimize images and assets
+- Use React.Suspense for code splitting
+- Minimize bundle size
+
+## Testing
+- Write unit tests for utilities
+- Test component behavior, not implementation
+- Use descriptive test names
+
+## Git Practices
+- Use conventional commits
+- Keep commits atomic and focused
+- Write clear commit messages
+
+## Build & Deploy
+- Ensure TypeScript compilation passes
+- Run linting before commits
+- Optimize for production builds
+- Follow CI/CD pipeline requirements 

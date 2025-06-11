@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply antialiased text-primary-900 bg-white;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight leading-tight;
+  }
+  
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl font-semibold;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl lg:text-4xl font-semibold;
+  }
+  
+  p {
+    @apply text-lg leading-relaxed text-gray-600;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-8 py-3.5 font-medium text-base border-0 cursor-pointer transition-all duration-200 tracking-wide;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-900 text-white hover:bg-primary-800 hover:-translate-y-0.5;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent text-primary-900 border-2 border-primary-900 hover:bg-primary-900 hover:text-white hover:-translate-y-0.5;
+  }
+  
+  .card {
+    @apply bg-white border border-gray-200 p-8 transition-all duration-300 hover:border-primary-900 hover:-translate-y-1 hover:shadow-xl;
+  }
+  
+  .section {
+    @apply py-24 min-h-screen flex items-center;
+  }
+  
+  .container {
+    @apply max-w-6xl mx-auto px-8;
+  }
+} 
