@@ -8,5 +8,6 @@ export interface IProject {
     website?: string;
     appStore?: string;
     playStore?: string;
+    kickstarter?: string;
   };
 } 

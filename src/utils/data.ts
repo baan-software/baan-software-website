@@ -71,5 +71,22 @@ export const projects: IProject[] = [
     urls: {
       website: 'https://www.cookbash.com'
     }
+  },
+  {
+    id: 'storyball-app',
+    title: 'Storyball App',
+    description: 'An innovative mobile app that transforms physical play into digital storytelling. The app connects to a smart ball that captures motion and sound, creating unique stories based on how children play. Features include story generation, interactive gameplay, and parental controls. Note: This app is no longer available in app stores.',
+    technologies: ['Swift', 'Kotlin', 'Java'],
+    category: 'mobile',
+    urls: {
+      kickstarter: 'https://www.kickstarter.com/projects/storyball/storyball-the-smart-ball-that-turns-play-into-stories'
+    }
+  },
+  {
+    id: 'storyball-server',
+    title: 'Storyball Server',
+    description: 'A robust backend system that powers the Storyball ecosystem. Handles story generation algorithms, user data management, device synchronization, and content delivery. Implements secure authentication and real-time data processing for seamless interaction between the physical ball and digital storytelling experience.',
+    technologies: ['Node.js', 'MongoDB'],
+    category: 'backend'
   }
 ]; 
