@@ -1,6 +1,6 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
-import { projects } from '@/utils';
+import { projects, siteData } from '@/utils';
 import { IProject } from '@/types';
 
 export const Projects: React.FC = React.memo(() => {
@@ -84,11 +84,11 @@ export const Projects: React.FC = React.memo(() => {
           <div className={`text-center mb-16 ${inView ? 'animate-fade-in-up' : 'opacity-0'}`}>
             <h2 className="text-primary-900 mb-6">
               <span className="bg-gradient-to-r from-primary-600 via-accent-600 to-primary-800 bg-clip-text text-transparent">
-                Our Projects
+                {siteData.projects.title}
               </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Explore some of the innovative projects we've delivered across different platforms and technologies.
+              {siteData.projects.subtitle}
             </p>
           </div>
           

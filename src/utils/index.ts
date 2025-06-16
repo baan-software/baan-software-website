@@ -1,2 +1,2 @@
 export { scrollToSection } from './scrollTo';
-export { navigationItems, companyValues, projects } from './data'; 
+export { navigationItems, companyValues, projects, siteData } from './data'; 

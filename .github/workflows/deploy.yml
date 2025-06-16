@@ -37,11 +37,28 @@ jobs:
         with:
           name: build-files
           path: dist/
+  
+  check-secrets:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    steps:
+      - name: Check deployment secrets
+        run: |
+          if [[ -z "${{ secrets.AWS_ACCESS_KEY_ID }}" || -z "${{ secrets.AWS_SECRET_ACCESS_KEY }}" || -z "${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}" ]]; then
+            echo "⚠️  Deployment skipped: AWS secrets not configured"
+            echo "ℹ️  To enable deployment, configure the following repository secrets:"
+            echo "   - AWS_ACCESS_KEY_ID"
+            echo "   - AWS_SECRET_ACCESS_KEY" 
+            echo "   - CLOUDFRONT_DISTRIBUTION_ID"
+            echo "📖 See README.md for more details"
+          else
+            echo "✅ All deployment secrets are configured"
+          fi
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push' && secrets.AWS_ACCESS_KEY_ID != '' && secrets.AWS_SECRET_ACCESS_KEY != '' && secrets.CLOUDFRONT_DISTRIBUTION_ID != ''
     
     env:
       S3_BUCKET_NAME: baan-software-website

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { navigationItems, scrollToSection } from '@/utils';
+import { navigationItems, scrollToSection, siteData } from '@/utils';
 import { INavigationItem } from '@/types';
 
 export const Header: React.FC = React.memo(() => {
@@ -54,15 +54,15 @@ export const Header: React.FC = React.memo(() => {
             className="flex items-center space-x-3 bg-transparent border-0 cursor-pointer p-0 hover:opacity-80 transition-opacity duration-200"
           >
             <img 
-              src="/baan-software-logo.svg" 
-              alt="Baan Software Logo" 
+              src={siteData.company.logoPath}
+              alt={siteData.company.logoAlt}
               className="h-10 w-10"
               style={{ 
                 filter: 'brightness(0) saturate(100%) invert(11%) sepia(9%) saturate(2148%) hue-rotate(181deg) brightness(95%) contrast(95%)'
               }}
             />
             <span className="text-2xl font-bold text-primary-900 tracking-tight">
-              Baan Software
+              {siteData.company.name}
             </span>
           </button>
           

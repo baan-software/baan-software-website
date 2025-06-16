@@ -1,5 +1,6 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
+import { siteData } from '@/utils';
 
 export const Contact: React.FC = React.memo(() => {
   const { ref, inView } = useInView({ threshold: 0.1 });
@@ -17,13 +18,12 @@ export const Contact: React.FC = React.memo(() => {
           <div className={`space-y-8 ${inView ? 'animate-fade-in-up' : 'opacity-0'}`}>
             <h2 className="text-primary-900">
               <span className="bg-gradient-to-r from-primary-600 via-accent-600 to-primary-800 bg-clip-text text-transparent">
-                Get In Touch
+                {siteData.contact.title}
               </span>
             </h2>
             
             <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-              Ready to bring your ideas to life? We'd love to hear about your project 
-              and discuss how we can help you achieve your <span className="text-primary-700 font-semibold">goals</span>.
+              {siteData.contact.description}
             </p>
             
             <div className="bg-white/80 backdrop-blur-lg p-8 lg:p-12 max-w-2xl mx-auto rounded-2xl shadow-2xl border border-white/50 relative overflow-hidden">
@@ -33,7 +33,7 @@ export const Contact: React.FC = React.memo(() => {
               <div className="relative z-10 space-y-6">
                 <div className="text-center">
                   <h3 className="text-2xl font-semibold text-primary-900 mb-2">
-                    Contact Information
+                    {siteData.contact.subtitle}
                   </h3>
                   <p className="text-gray-600">
                     Reach out to us for any inquiries or to start your next project.
@@ -49,21 +49,21 @@ export const Contact: React.FC = React.memo(() => {
                     </div>
                     <div className="text-primary-900 font-medium">Email:</div>
                     <a 
-                      href="mailto:info@baansoftware.com"
+                      href={`mailto:${siteData.contact.email}`}
                       className="text-primary-700 hover:text-primary-800 transition-colors duration-200 font-medium hover:underline"
                     >
-                      info@baansoftware.com
+                      {siteData.contact.email}
                     </a>
                   </div>
                 </div>
                 
                 <div className="pt-6">
                   <a
-                    href="mailto:info@baansoftware.com"
+                    href={`mailto:${siteData.contact.email}`}
                     className="btn btn-primary bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
                   >
                     <span className="flex items-center">
-                      Send us an Email
+                      {siteData.contact.buttonText}
                       <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                       </svg>

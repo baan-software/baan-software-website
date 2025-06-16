@@ -1,4 +1,4 @@
-import { INavigationItem, IProject, IValue } from '@/types';
+import { INavigationItem, IProject, IValue, ISiteData } from '@/types';
 import { Section } from '@/enums';
 
 export const navigationItems: INavigationItem[] = [
@@ -89,4 +89,83 @@ export const projects: IProject[] = [
     technologies: ['Node.js', 'MongoDB'],
     category: 'backend'
   }
-]; 
+];
+
+// Site-wide data
+export const siteData: ISiteData = {
+  company: {
+    name: 'Baan Software',
+    logoPath: '/baan-software-logo.svg',
+    logoAlt: 'Baan Software Logo'
+  },
+  hero: {
+    title: 'Exceptional Software Development',
+    subtitle: 'Baan Software',
+    description: 'At Baan Software, we are dedicated to providing exceptional software development, product development, and technical solution services. Our mission is to help clients bring their ideas to life with high-quality, sustainable, and innovative technology.',
+    buttons: {
+      primary: {
+        text: 'Get Started',
+        action: 'contact'
+      },
+      secondary: {
+        text: 'Learn More',
+        action: 'about'
+      }
+    },
+    statistics: {
+      experience: {
+        value: '15+',
+        label: 'Years Experience'
+      },
+      projects: {
+        value: '4',
+        label: 'Major Projects'
+      },
+      satisfaction: {
+        value: '100%',
+        label: 'Client Satisfaction'
+      }
+    }
+  },
+  about: {
+    title: 'About Baan Software',
+    founder: {
+      name: 'Giora Vered',
+      linkedin: 'https://www.linkedin.com/in/giora-vered-83b00259/',
+      experience: 'over 15 years'
+    },
+    description: [
+      'Baan Software was founded by Giora Vered, a seasoned software developer with over 15 years of experience. Giora has worked on a diverse range of projects, including mobile and web applications, mobile SDKs, server-side systems, and more.',
+      'His passion for creating elegant, efficient, and user-friendly solutions drives the company\'s approach to every project. Whether you\'re building a new product, refining an existing one, or tackling complex technical challenges, Baan Software is here to help you achieve your goals with expertise and care.'
+    ],
+    expertise: [
+      {
+        title: 'Mobile Development',
+        description: 'Native and cross-platform mobile applications'
+      },
+      {
+        title: 'Web Applications',
+        description: 'Modern, responsive web applications'
+      },
+      {
+        title: 'Backend Systems',
+        description: 'Scalable server-side architectures'
+      }
+    ]
+  },
+  values: {
+    title: 'Our Values',
+    subtitle: 'These core principles guide everything we do and define how we work with our clients.'
+  },
+  projects: {
+    title: 'Our Projects',
+    subtitle: 'Explore some of the innovative projects we\'ve delivered across different platforms and technologies.'
+  },
+  contact: {
+    title: 'Get In Touch',
+    subtitle: 'Contact Information',
+    description: 'Ready to bring your ideas to life? We\'d love to hear about your project and discuss how we can help you achieve your goals.',
+    email: 'info@baansoftware.com',
+    buttonText: 'Send us an Email'
+  }
+}; 

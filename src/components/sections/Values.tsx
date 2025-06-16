@@ -1,6 +1,6 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
-import { companyValues } from '@/utils';
+import { companyValues, siteData } from '@/utils';
 
 export const Values: React.FC = React.memo(() => {
   const { ref, inView } = useInView({ threshold: 0.1 });
@@ -71,11 +71,11 @@ export const Values: React.FC = React.memo(() => {
           <div className={`text-center mb-16 ${inView ? 'animate-fade-in-up' : 'opacity-0'}`}>
             <h2 className="text-primary-900 mb-6">
               <span className="bg-gradient-to-r from-primary-600 via-accent-600 to-primary-800 bg-clip-text text-transparent">
-                Our Values
+                {siteData.values.title}
               </span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              These core principles guide everything we do and define how we work with our clients.
+              {siteData.values.subtitle}
             </p>
           </div>
           
