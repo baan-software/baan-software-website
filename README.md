@@ -1,25 +1,5 @@
 # Baan Software Website
 
-A modern, professional website for Baan Software - a boutique software development consultancy.
-
-## 🚀 Tech Stack
-
-- **Framework**: React 18 with TypeScript
-- **Build Tool**: Vite
-- **Package Manager**: Yarn
-- **Styling**: TailwindCSS with custom design tokens
-- **Animations**: CSS animations with Intersection Observer
-- **Deployment**: AWS S3 + CloudFront
-
-## 🎨 Design Philosophy
-
-- **Clean & Minimalist**: Sharp, professional aesthetic
-- **Modern Typography**: Tight spacing and clear hierarchy
-- **Grid-based Layout**: Structured and organized
-- **Subtle Animations**: Smooth hover effects and transitions
-- **Responsive Design**: Mobile-first approach
-- **Professional Palette**: Custom color scheme with primary grays
-
 ## 📦 Installation
 
 ```bash
@@ -235,15 +215,6 @@ yarn build
 - Use TailwindCSS utility classes
 - Implement proper animations with Intersection Observer
 - Write clean, maintainable code
-
-## 📱 Features
-
-- **Responsive Design**: Works perfectly on all devices
-- **Smooth Scrolling**: Navigation with smooth scroll effects
-- **Intersection Observer**: Elements animate as they come into view
-- **Professional Animations**: Subtle fade-in and slide effects
-- **SEO Optimized**: Proper meta tags and semantic HTML
-- **Fast Loading**: Optimized build with Vite
 
 ## 🔧 Customization
 
