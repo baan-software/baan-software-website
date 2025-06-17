@@ -1,5 +1,5 @@
 # Baan Software Website
-[www.baansoftware.com](This is what it looks like)
+[This is what it looks like](www.baansoftware.com)
 
 ## Use as Template
 
