@@ -1,6 +1,26 @@
 # Baan Software Website
+[www.baansoftware.com](This is what it looks like)
 
-## 📦 Installation
+## Use as Template
+
+**Feel free to use this project as a template** for your own portfolio or business website! This repository serves as a solid foundation for modern React/TypeScript websites with professional design and clean architecture.
+
+To customize for your own use:
+1. Fork or clone this repository
+2. Update the data in `src/utils/data.ts` with your information
+3. Replace the logo and favicon files in the `public/` directory
+4. Customize colors and styling in `tailwind.config.js` if desired
+5. Update the GitHub secrets for deployment (if using AWS)
+
+To customize the design:
+
+1. **Colors**: Edit `tailwind.config.js` to modify the color palette
+2. **Typography**: Adjust font sizes and spacing in `src/index.css`
+3. **Content**: Update data in `src/utils/data.ts`
+4. **Animations**: Modify animation classes in TailwindCSS config
+
+
+## Installation
 
 ```bash
 # Clone the repository
@@ -26,7 +46,7 @@ yarn type-check
 yarn lint
 ```
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 src/
@@ -62,21 +82,7 @@ src/
 └── main.tsx            # Application entry point
 ```
 
-## 🎨 TailwindCSS Configuration
-
-The project uses a custom TailwindCSS configuration with:
-
-- **Custom Color Palette**: Professional grays and primary colors
-- **Extended Typography**: Tight letter spacing for modern look
-- **Custom Animations**: Fade-in-up and slide-in effects
-- **Responsive Design**: Mobile-first breakpoints
-
-Key design tokens:
-- Primary colors: `primary-50` to `primary-900`
-- Gray scale: `gray-50` to `gray-900`
-- Custom letter spacing: `tighter`, `tight`, `wide`, `wider`
-
-## 🚀 Deployment
+## Deployment
 
 The website is automatically deployed using GitHub Actions:
 
@@ -216,30 +222,11 @@ yarn build
 - Implement proper animations with Intersection Observer
 - Write clean, maintainable code
 
-## 🔧 Customization
 
-To customize the design:
-
-1. **Colors**: Edit `tailwind.config.js` to modify the color palette
-2. **Typography**: Adjust font sizes and spacing in `src/index.css`
-3. **Content**: Update data in `src/utils/data.ts`
-4. **Animations**: Modify animation classes in TailwindCSS config
-
-## 🎯 Use as Template
-
-**Feel free to use this project as a template** for your own portfolio or business website! This repository serves as a solid foundation for modern React/TypeScript websites with professional design and clean architecture.
-
-To customize for your own use:
-1. Fork or clone this repository
-2. Update the data in `src/utils/data.ts` with your information
-3. Replace the logo and favicon files in the `public/` directory
-4. Customize colors and styling in `tailwind.config.js` if desired
-5. Update the GitHub secrets for deployment (if using AWS)
-
-## 📄 License
+## License
 
 MIT License - See LICENSE file for details.
 
-## 📞 Contact
+## Contact
 
 For questions about this project, contact: info@baansoftware.com 
