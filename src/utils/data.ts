@@ -118,7 +118,7 @@ export const siteData: ISiteData = {
         label: 'Years Experience'
       },
       projects: {
-        value: '4',
+        value: '6',
         label: 'Major Projects'
       },
       satisfaction: {
