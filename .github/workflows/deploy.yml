@@ -58,7 +58,7 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push' && secrets.AWS_ACCESS_KEY_ID != '' && secrets.AWS_SECRET_ACCESS_KEY != '' && secrets.CLOUDFRONT_DISTRIBUTION_ID != ''
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     
     env:
       S3_BUCKET_NAME: baan-software-website
