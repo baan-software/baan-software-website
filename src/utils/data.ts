@@ -88,6 +88,16 @@ export const projects: IProject[] = [
     description: 'A robust backend system that powers the Storyball ecosystem. Handles story generation algorithms, user data management, device synchronization, and content delivery. Implements secure authentication and real-time data processing for seamless interaction between the physical ball and digital storytelling experience.',
     technologies: ['Node.js', 'MongoDB'],
     category: 'backend'
+  },
+  {
+    id: 'flutter-animated-transitions',
+    title: 'Flutter Animated Transitions',
+    description: 'An open-source library that provides a set of beautiful animated transitions for Flutter. The library is designed to be easy to use and customize and expandable.',
+    technologies: ['Flutter'],
+    category: 'mobile',
+    urls: {
+      website: 'https://github.com/baan-software/flutter-animated-transitions'
+    }
   }
 ];
 
