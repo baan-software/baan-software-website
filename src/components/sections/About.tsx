@@ -13,28 +13,30 @@ export const About: React.FC = React.memo(() => {
             <h2 className="text-primary-900">{siteData.about.title}</h2>
             
             <div className="space-y-6 text-left mb-16">
-              {siteData.about.description.map((paragraph, index) => (
-                <p key={index} className="text-xl leading-relaxed">
-                  {index === 0 ? (
-                    <>
-                      Baan Software was founded by{' '}
-                      <a 
-                        href={siteData.about.founder.linkedin}
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="font-semibold text-primary-900 hover:text-primary-700 transition-colors duration-200 underline decoration-2 underline-offset-2"
-                      >
-                        {siteData.about.founder.name}
-                      </a>
-                      , a seasoned software developer 
-                      with {siteData.about.founder.experience} of experience. Giora has worked on a diverse range of projects, 
-                      including mobile and web applications, mobile SDKs, server-side systems, and more.
-                    </>
-                  ) : (
-                    paragraph
-                  )}
-                </p>
-              ))}
+              {siteData.about.description.map((paragraph, index) => {
+                const founderName = siteData.about.founder.name;
+                const parts = paragraph.split(founderName);
+                return (
+                  <p key={index} className="text-xl leading-relaxed">
+                    {parts.length > 1 ? (
+                      <>
+                        {parts[0]}
+                        <a
+                          href={siteData.about.founder.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-semibold text-primary-900 hover:text-primary-700 transition-colors duration-200 underline decoration-2 underline-offset-2"
+                        >
+                          {founderName}
+                        </a>
+                        {parts.slice(1).join(founderName)}
+                      </>
+                    ) : (
+                      paragraph
+                    )}
+                  </p>
+                );
+              })}
             </div>
             
             <div className="grid md:grid-cols-3 gap-8">
