@@ -4,6 +4,7 @@ export interface IProject {
   description: string;
   technologies: string[];
   category: 'mobile' | 'web' | 'backend';
+  engagement: 'full-development' | 'in-house' | 'dev-as-a-service';
   urls?: {
     website?: string;
     appStore?: string;

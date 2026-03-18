@@ -39,6 +39,7 @@ export const projects: IProject[] = [
     description: 'A mobile app that guides the user\'s resistance bands workout. The app is using image processing & pose estimations to count exercises repetitions, validating the correctness of execution. The app also record the user\'s workout history, adjusting the resistance band type according to the user\'s performance and summarizing information regarding the results of the workouts.',
     technologies: ['Flutter', 'MLKit'],
     category: 'mobile',
+    engagement: 'full-development',
     urls: {
       appStore: 'https://apps.apple.com/il/app/gymijet/id6680193845',
       playStore: 'https://play.google.com/store/apps/details?id=com.gymijet.android&hl=en'
@@ -49,7 +50,8 @@ export const projects: IProject[] = [
     title: 'Gymijet Server',
     description: 'A backend server to compliment the application. The backend implementation contains all the workout selection logic and adjusting the plan according to the user\'s performance. Managing user base and authentication, push notifications, subscriptions and more.',
     technologies: ['Node.js', 'MongoDB'],
-    category: 'backend'
+    category: 'backend',
+    engagement: 'full-development'
   },
   {
     id: 'cookbash-app',
@@ -57,6 +59,7 @@ export const projects: IProject[] = [
     description: 'A mobile & web app that guides the user through the process of organizing a gathering with great food. The app allow the plan an event, select a preferred cuisine, invite friends, taking into account their food preferences - in order to create an amazing meal.',
     technologies: ['Flutter'],
     category: 'mobile',
+    engagement: 'full-development',
     urls: {
       appStore: 'https://apps.apple.com/il/app/cookbash/id6479023085',
       playStore: 'https://play.google.com/store/apps/details?id=com.cookbash&hl=en&pli=1'
@@ -68,6 +71,7 @@ export const projects: IProject[] = [
     description: 'A marketing website that showcase recipes, chefs and content. The website contains a shop and information',
     technologies: ['NextJS', 'Strapi'],
     category: 'web',
+    engagement: 'full-development',
     urls: {
       website: 'https://www.cookbash.com'
     }
@@ -78,6 +82,7 @@ export const projects: IProject[] = [
     description: 'An innovative mobile app that transforms physical play into digital storytelling. The app connects to a smart ball that captures motion and sound, creating unique stories based on how children play. Features include story generation, interactive gameplay, and parental controls. Note: This app is no longer available in app stores.',
     technologies: ['Swift', 'Kotlin', 'Java'],
     category: 'mobile',
+    engagement: 'full-development',
     urls: {
       kickstarter: 'https://www.kickstarter.com/projects/storyball/storyball-the-smart-ball-that-turns-play-into-stories'
     }
@@ -87,7 +92,32 @@ export const projects: IProject[] = [
     title: 'Storyball Server',
     description: 'A robust backend system that powers the Storyball ecosystem. Handles story generation algorithms, user data management, device synchronization, and content delivery. Implements secure authentication and real-time data processing for seamless interaction between the physical ball and digital storytelling experience.',
     technologies: ['Node.js', 'MongoDB'],
-    category: 'backend'
+    category: 'backend',
+    engagement: 'full-development'
+  },
+  {
+    id: 'punch-oclock',
+    title: 'Punch O\'Clock',
+    description: 'A mobile time-tracking app for freelancers, contractors, and professionals. Track working hours across multiple projects, calculate earnings automatically, export reports to CSV and PDF, and sync data to the cloud. Features live activity support, offline mode, and support for all currencies.',
+    technologies: ['Flutter'],
+    category: 'mobile',
+    engagement: 'in-house',
+    urls: {
+      appStore: 'https://apps.apple.com/au/app/punch-oclock/id6756803931',
+      playStore: 'https://play.google.com/store/apps/details?id=com.baansoftware.clock_punch&hl=en'
+    }
+  },
+  {
+    id: 'shortica',
+    title: 'Shortica',
+    description: 'A streaming app for short-form vertical dramas. Delivers cinematic episodes of 60-90 seconds with personalized recommendations, a coin-based unlocking system, daily rewards, and multilingual subtitle support.',
+    technologies: ['Flutter'],
+    category: 'mobile',
+    engagement: 'dev-as-a-service',
+    urls: {
+      appStore: 'https://apps.apple.com/br/app/shortica/id6754937808',
+      playStore: 'https://play.google.com/store/apps/details?id=com.shortica.app&hl=en'
+    }
   },
   {
     id: 'flutter-animated-transitions',
@@ -95,6 +125,7 @@ export const projects: IProject[] = [
     description: 'An open-source library that provides a set of beautiful animated transitions for Flutter. The library is designed to be easy to use and customize and expandable.',
     technologies: ['Flutter'],
     category: 'mobile',
+    engagement: 'in-house',
     urls: {
       website: 'https://github.com/baan-software/flutter-animated-transitions'
     }
@@ -128,7 +159,7 @@ export const siteData: ISiteData = {
         label: 'Years Experience'
       },
       projects: {
-        value: '7',
+        value: '9',
         label: 'Major Projects'
       },
       satisfaction: {
@@ -145,8 +176,8 @@ export const siteData: ISiteData = {
       experience: 'over 15 years'
     },
     description: [
-      'Baan Software was founded by Giora Vered, a seasoned software developer with over 15 years of experience. Giora has worked on a diverse range of projects, including mobile and web applications, mobile SDKs, server-side systems, and more.',
-      'His passion for creating elegant, efficient, and user-friendly solutions drives the company\'s approach to every project. Whether you\'re building a new product, refining an existing one, or tackling complex technical challenges, Baan Software is here to help you achieve your goals with expertise and care.'
+      'Baan Software was founded by Giora Vered, a software developer with over 15 years of experience. Giora has worked on a wide range of projects, including mobile and web applications, mobile SDKs, server-side systems, and more.',
+      'Baan Software focuses on building reliable, well-structured solutions. Whether you\'re starting a new product, improving an existing one, or solving a technical problem, we can help you get it done.'
     ],
     expertise: [
       {
