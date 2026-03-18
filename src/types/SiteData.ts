@@ -21,10 +21,6 @@ export interface IHeroData {
       value: string;
       label: string;
     };
-    satisfaction: {
-      value: string;
-      label: string;
-    };
   };
 }
 

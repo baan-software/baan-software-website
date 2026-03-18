@@ -79,10 +79,6 @@ export const Hero: React.FC = React.memo(() => {
                   <div className="text-4xl lg:text-5xl font-bold mb-2">{siteData.hero.statistics.projects.value}</div>
                   <div className="font-medium tracking-wide opacity-80">{siteData.hero.statistics.projects.label}</div>
                 </div>
-                <div className="text-center p-6 bg-gradient-to-br from-success-100 to-success-200 rounded-xl text-success-800 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border border-success-200/50">
-                  <div className="text-4xl lg:text-5xl font-bold mb-2">{siteData.hero.statistics.satisfaction.value}</div>
-                  <div className="font-medium tracking-wide opacity-80">{siteData.hero.statistics.satisfaction.label}</div>
-                </div>
               </div>
             </div>
           </div>

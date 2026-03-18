@@ -161,10 +161,6 @@ export const siteData: ISiteData = {
       projects: {
         value: '9',
         label: 'Major Projects'
-      },
-      satisfaction: {
-        value: '100%',
-        label: 'Client Satisfaction'
       }
     }
   },
