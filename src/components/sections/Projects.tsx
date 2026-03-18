@@ -22,24 +22,24 @@ export const Projects: React.FC = React.memo(() => {
   const getEngagementColor = (engagement: string): string => {
     switch (engagement) {
       case 'full-development':
-        return 'bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg';
+        return 'bg-gradient-to-r from-primary-500 to-primary-600 text-white shadow-lg';
       case 'in-house':
-        return 'bg-gradient-to-r from-purple-500 to-purple-600 text-white shadow-lg';
+        return 'bg-gradient-to-r from-success-500 to-success-600 text-white shadow-lg';
       case 'dev-as-a-service':
-        return 'bg-gradient-to-r from-amber-500 to-amber-600 text-white shadow-lg';
+        return 'bg-gradient-to-r from-warning-500 to-warning-600 text-white shadow-lg';
       default:
         return 'bg-gradient-to-r from-gray-500 to-gray-600 text-white shadow-lg';
     }
   };
 
-  const getCardBorderColor = (category: string): string => {
-    switch (category) {
-      case 'mobile':
+  const getCardBorderColor = (engagement: string): string => {
+    switch (engagement) {
+      case 'full-development':
         return 'border-l-primary-500 hover:border-primary-400';
-      case 'web':
-        return 'border-l-accent-500 hover:border-accent-400';
-      case 'backend':
+      case 'in-house':
         return 'border-l-success-500 hover:border-success-400';
+      case 'dev-as-a-service':
+        return 'border-l-warning-500 hover:border-warning-400';
       default:
         return 'border-l-gray-500 hover:border-gray-400';
     }
@@ -109,7 +109,7 @@ export const Projects: React.FC = React.memo(() => {
             {projects.map((project, index) => (
               <div
                 key={project.id}
-                className={`bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:shadow-2xl border-l-4 ${getCardBorderColor(project.category)} transition-all duration-300 hover:-translate-y-2 ${inView ? 'animate-fade-in-up' : 'opacity-0'} relative overflow-hidden`}
+                className={`bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:shadow-2xl border-l-4 ${getCardBorderColor(project.engagement)} transition-all duration-300 hover:-translate-y-2 ${inView ? 'animate-fade-in-up' : 'opacity-0'} relative overflow-hidden`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {/* Card background gradient */}
