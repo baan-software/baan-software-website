@@ -19,6 +19,32 @@ export const Projects: React.FC = React.memo(() => {
     }
   };
 
+  const getEngagementLabel = (engagement: string): string => {
+    switch (engagement) {
+      case 'full-development':
+        return 'Full Development';
+      case 'in-house':
+        return 'In-House Product';
+      case 'dev-as-a-service':
+        return 'Dev as a Service';
+      default:
+        return engagement;
+    }
+  };
+
+  const getEngagementColor = (engagement: string): string => {
+    switch (engagement) {
+      case 'full-development':
+        return 'bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg';
+      case 'in-house':
+        return 'bg-gradient-to-r from-purple-500 to-purple-600 text-white shadow-lg';
+      case 'dev-as-a-service':
+        return 'bg-gradient-to-r from-amber-500 to-amber-600 text-white shadow-lg';
+      default:
+        return 'bg-gradient-to-r from-gray-500 to-gray-600 text-white shadow-lg';
+    }
+  };
+
   const getCardBorderColor = (category: string): string => {
     switch (category) {
       case 'mobile':
@@ -107,9 +133,14 @@ export const Projects: React.FC = React.memo(() => {
                     <h3 className="text-2xl font-semibold text-primary-900">
                       {project.title}
                     </h3>
-                    <span className={`px-4 py-2 rounded-xl text-sm font-medium ${getCategoryColor(project.category)} transform hover:scale-105 transition-all duration-200`}>
-                      {project.category}
-                    </span>
+                    <div className="flex gap-2">
+                      <span className={`px-4 py-2 rounded-xl text-sm font-medium ${getEngagementColor(project.engagement)} transform hover:scale-105 transition-all duration-200`}>
+                        {getEngagementLabel(project.engagement)}
+                      </span>
+                      <span className={`px-4 py-2 rounded-xl text-sm font-medium ${getCategoryColor(project.category)} transform hover:scale-105 transition-all duration-200`}>
+                        {project.category}
+                      </span>
+                    </div>
                   </div>
                   
                   <p className="text-gray-700 leading-relaxed mb-6 text-base">
