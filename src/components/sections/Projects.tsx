@@ -6,19 +6,6 @@ import { IProject } from '@/types';
 export const Projects: React.FC = React.memo(() => {
   const { ref, inView } = useInView({ threshold: 0.1 });
 
-  const getCategoryColor = (category: string): string => {
-    switch (category) {
-      case 'mobile':
-        return 'bg-gradient-to-r from-primary-500 to-primary-600 text-white shadow-lg';
-      case 'web':
-        return 'bg-gradient-to-r from-accent-500 to-accent-600 text-white shadow-lg';
-      case 'backend':
-        return 'bg-gradient-to-r from-success-500 to-success-600 text-white shadow-lg';
-      default:
-        return 'bg-gradient-to-r from-gray-500 to-gray-600 text-white shadow-lg';
-    }
-  };
-
   const getEngagementLabel = (engagement: string): string => {
     switch (engagement) {
       case 'full-development':
@@ -133,14 +120,9 @@ export const Projects: React.FC = React.memo(() => {
                     <h3 className="text-2xl font-semibold text-primary-900">
                       {project.title}
                     </h3>
-                    <div className="flex gap-2">
-                      <span className={`px-4 py-2 rounded-xl text-sm font-medium ${getEngagementColor(project.engagement)} transform hover:scale-105 transition-all duration-200`}>
-                        {getEngagementLabel(project.engagement)}
-                      </span>
-                      <span className={`px-4 py-2 rounded-xl text-sm font-medium ${getCategoryColor(project.category)} transform hover:scale-105 transition-all duration-200`}>
-                        {project.category}
-                      </span>
-                    </div>
+                    <span className={`px-4 py-2 rounded-xl text-sm font-medium ${getEngagementColor(project.engagement)} transform hover:scale-105 transition-all duration-200`}>
+                      {getEngagementLabel(project.engagement)}
+                    </span>
                   </div>
                   
                   <p className="text-gray-700 leading-relaxed mb-6 text-base">
