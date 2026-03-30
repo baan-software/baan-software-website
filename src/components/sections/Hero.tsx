@@ -10,60 +10,44 @@ export const Hero: React.FC = React.memo(() => {
     setIsLoaded(true);
   }, []);
 
-  const handleContactClick = (): void => {
-    const contactSection = document.getElementById(siteData.hero.buttons.primary.action);
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
+  const scrollToSection = (id: string): void => {
+    const section = document.getElementById(id);
+    if (section) {
+      const headerOffset = 80;
+      const top = section.getBoundingClientRect().top + window.scrollY - headerOffset;
+      window.scrollTo({ top, behavior: 'smooth' });
     }
   };
 
-  const handleLearnMoreClick = (): void => {
-    const aboutSection = document.getElementById(siteData.hero.buttons.secondary.action);
-    if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
-    <section id="home" className="section pt-32 relative" ref={ref}>
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-primary-400 to-accent-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse-slow"></div>
-        <div className="absolute top-40 right-10 w-72 h-72 bg-gradient-to-r from-accent-400 to-secondary-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute -bottom-32 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-gradient-to-r from-primary-300 to-success-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse-slow" style={{ animationDelay: '4s' }}></div>
-      </div>
-      
-      <div className="container relative z-10">
-        <div className={`max-w-3xl mx-auto text-center space-y-8 ${isLoaded && inView ? 'animate-fade-in-up' : 'opacity-0'}`}>
-          <h1 className="text-primary-900 relative whitespace-nowrap">
-            <span className="bg-gradient-to-r from-primary-600 via-accent-600 to-primary-800 bg-clip-text text-transparent animate-gradient">
-              {siteData.hero.title}
-            </span>
-          </h1>
-          <p className="text-xl leading-relaxed text-gray-700">
+    <section id="home" className="section section-hero pt-32 relative" ref={ref}>
+      <div className="container">
+        <div className={`max-w-2xl mx-auto text-center space-y-6 ${isLoaded && inView ? 'animate-fade-in-up' : 'opacity-0'}`}>
+          <h1>{siteData.hero.title}</h1>
+          <p className="text-lg leading-relaxed text-gray-500">
             {siteData.hero.description}
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button
-              onClick={handleContactClick}
-              className="btn btn-primary bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
-            >
-              <span className="flex items-center">
-                {siteData.hero.buttons.primary.text}
-                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </span>
+          <div className="flex flex-col sm:flex-row justify-center gap-3 pt-4">
+            <button onClick={() => scrollToSection(siteData.hero.buttons.primary.action)} className="btn btn-primary">
+              {siteData.hero.buttons.primary.text}
             </button>
-            <button
-              onClick={handleLearnMoreClick}
-              className="btn btn-secondary border-2 border-primary-600 text-primary-700 hover:bg-gradient-to-r hover:from-primary-600 hover:to-primary-700 hover:text-white hover:border-transparent shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-200"
-            >
+            <button onClick={() => scrollToSection(siteData.hero.buttons.secondary.action)} className="btn btn-secondary">
               {siteData.hero.buttons.secondary.text}
             </button>
           </div>
         </div>
       </div>
+
+      <button
+        onClick={() => scrollToSection('about')}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer bg-transparent border-0 p-2"
+        aria-label="Scroll down"
+      >
+        <svg className="w-8 h-8 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
     </section>
   );
-}); 
+});

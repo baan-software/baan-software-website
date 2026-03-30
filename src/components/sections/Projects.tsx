@@ -1,7 +1,6 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { projects, siteData } from '@/utils';
-import { IProject } from '@/types';
 
 export const Projects: React.FC = React.memo(() => {
   const { ref, inView } = useInView({ threshold: 0.1 });
@@ -22,125 +21,99 @@ export const Projects: React.FC = React.memo(() => {
   const getEngagementColor = (engagement: string): string => {
     switch (engagement) {
       case 'full-development':
-        return 'bg-gradient-to-r from-primary-500 to-primary-600 text-white shadow-lg';
+        return 'bg-primary-100 text-primary-800';
       case 'in-house':
-        return 'bg-gradient-to-r from-success-500 to-success-600 text-white shadow-lg';
+        return 'bg-success-100 text-success-800';
       case 'dev-as-a-service':
-        return 'bg-gradient-to-r from-warning-500 to-warning-600 text-white shadow-lg';
+        return 'bg-warning-100 text-warning-800';
       default:
-        return 'bg-gradient-to-r from-gray-500 to-gray-600 text-white shadow-lg';
+        return 'bg-gray-100 text-gray-800';
     }
   };
 
-  const getCardBorderColor = (engagement: string): string => {
-    switch (engagement) {
-      case 'full-development':
-        return 'border-l-primary-500 hover:border-primary-400';
-      case 'in-house':
-        return 'border-l-success-500 hover:border-success-400';
-      case 'dev-as-a-service':
-        return 'border-l-warning-500 hover:border-warning-400';
-      default:
-        return 'border-l-gray-500 hover:border-gray-400';
-    }
-  };
-
-  const renderProjectLinks = (project: IProject): JSX.Element | null => {
-    if (!project.urls) return null;
-
-    return (
-      <div className="flex flex-wrap gap-3 pt-4 border-t border-gray-100">
-        {project.urls.website && (
-          <a
-            href={project.urls.website}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-primary-600 to-primary-700 rounded-lg hover:from-primary-700 hover:to-primary-800 transition-all duration-200 shadow-md hover:shadow-lg transform hover:scale-105"
-          >
-            🌐 Website
-          </a>
-        )}
-        {project.urls.appStore && (
-          <a
-            href={project.urls.appStore}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-gray-600 to-gray-700 rounded-lg hover:from-gray-700 hover:to-gray-800 transition-all duration-200 shadow-md hover:shadow-lg transform hover:scale-105"
-          >
-            📱 App Store
-          </a>
-        )}
-        {project.urls.playStore && (
-          <a
-            href={project.urls.playStore}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-success-600 to-success-700 rounded-lg hover:from-success-700 hover:to-success-800 transition-all duration-200 shadow-md hover:shadow-lg transform hover:scale-105"
-          >
-            🤖 Play Store
-          </a>
-        )}
-      </div>
-    );
-  };
+  const pastelColors = [
+    'hover:bg-blue-50',
+    'hover:bg-rose-50',
+    'hover:bg-amber-50',
+    'hover:bg-emerald-50',
+    'hover:bg-violet-50',
+    'hover:bg-cyan-50',
+  ];
 
   return (
-    <section id="projects" className="section relative" ref={ref}>
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-20 right-20 w-64 h-64 bg-gradient-to-r from-accent-300 to-primary-300 rounded-full mix-blend-multiply filter blur-xl"></div>
-        <div className="absolute bottom-20 left-20 w-80 h-80 bg-gradient-to-r from-success-300 to-accent-300 rounded-full mix-blend-multiply filter blur-xl"></div>
-      </div>
-      
-      <div className="container relative z-10">
-        <div className="max-w-6xl mx-auto">
-          <div className={`text-center mb-16 ${inView ? 'animate-fade-in-up' : 'opacity-0'}`}>
-            <h2 className="text-primary-900 mb-6">
-              <span className="bg-gradient-to-r from-primary-600 via-accent-600 to-primary-800 bg-clip-text text-transparent">
-                {siteData.projects.title}
-              </span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+    <section id="projects" className="section" ref={ref}>
+      <div className="container">
+        <div className="max-w-5xl mx-auto">
+          <div className={`mb-12 ${inView ? 'animate-fade-in-up' : 'opacity-0'}`}>
+            <h2 className="mb-4">{siteData.projects.title}</h2>
+            <p className="text-gray-500 max-w-2xl">
               {siteData.projects.subtitle}
             </p>
           </div>
-          
-          <div className="grid md:grid-cols-2 gap-8">
+
+          <div className="space-y-8">
             {projects.map((project, index) => (
               <div
                 key={project.id}
-                className={`bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:shadow-2xl border-l-4 ${getCardBorderColor(project.engagement)} transition-all duration-300 hover:-translate-y-2 ${inView ? 'animate-fade-in-up' : 'opacity-0'} relative overflow-hidden`}
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className={`flex gap-8 p-6 rounded transition-all duration-200 hover:scale-[1.01] ${pastelColors[index % pastelColors.length]} ${inView ? 'animate-fade-in-up' : 'opacity-0'}`}
+                style={{ animationDelay: `${index * 0.08}s` }}
               >
-                {/* Card background gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white via-gray-50/50 to-primary-50/20 opacity-60"></div>
-                
-                <div className="relative z-10">
-                  <div className="flex items-start justify-between mb-4">
-                    <h3 className="text-2xl font-semibold text-primary-900">
-                      {project.title}
-                    </h3>
-                    <span className={`px-4 py-2 rounded-xl text-sm font-medium ${getEngagementColor(project.engagement)} transform hover:scale-105 transition-all duration-200`}>
+                <div className="w-64 h-44 rounded-lg border border-gray-200/60 shrink-0 hidden md:flex items-center justify-center p-6">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="max-w-full max-h-full object-contain rounded-[22px]"
+                  />
+                </div>
+
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-baseline justify-between mb-2">
+                    <h3 className="text-lg font-semibold">{project.title}</h3>
+                    <span className={`text-xs font-medium px-2.5 py-1 rounded shrink-0 ml-4 ${getEngagementColor(project.engagement)}`}>
                       {getEngagementLabel(project.engagement)}
                     </span>
                   </div>
-                  
-                  <p className="text-gray-700 leading-relaxed mb-6 text-base">
+
+                  <p className="text-sm text-gray-500 leading-relaxed mb-4">
                     {project.description}
                   </p>
-                  
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-3 py-1 bg-gradient-to-r from-gray-100 to-gray-200 text-gray-700 rounded-lg text-sm font-medium border border-gray-300 hover:from-primary-50 hover:to-primary-100 hover:border-primary-200 transition-all duration-200"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
 
-                  {renderProjectLinks(project)}
+                  {project.components.length > 1 ? (
+                    <div className="space-y-3 mb-4">
+                      {project.components.map((component) => (
+                        <div key={component.label} className="border-l-2 border-gray-200 pl-4">
+                          <div className="text-sm font-medium text-gray-700">{component.label}</div>
+                          <p className="text-xs text-gray-400 leading-relaxed mt-0.5">{component.description}</p>
+                          <div className="flex flex-wrap gap-1.5 mt-1.5">
+                            {component.technologies.map((tech) => (
+                              <span key={tech} className="text-xs px-2 py-0.5 rounded bg-gray-100 text-gray-600 font-medium">{tech}</span>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="flex flex-wrap gap-1.5 mb-4">
+                      {project.components[0].technologies.map((tech) => (
+                        <span key={tech} className="text-xs px-2 py-0.5 rounded bg-gray-100 text-gray-600 font-medium">{tech}</span>
+                      ))}
+                    </div>
+                  )}
+
+                  <div className="flex flex-wrap items-center gap-2">
+                    {project.urls?.website && (
+                      <a href={project.urls.website} target="_blank" rel="noopener noreferrer" className="text-xs text-gray-500 hover:text-gray-900 underline underline-offset-2 transition-colors duration-200">Website</a>
+                    )}
+                    {project.urls?.appStore && (
+                      <a href={project.urls.appStore} target="_blank" rel="noopener noreferrer" className="text-xs text-gray-500 hover:text-gray-900 underline underline-offset-2 transition-colors duration-200">App Store</a>
+                    )}
+                    {project.urls?.playStore && (
+                      <a href={project.urls.playStore} target="_blank" rel="noopener noreferrer" className="text-xs text-gray-500 hover:text-gray-900 underline underline-offset-2 transition-colors duration-200">Play Store</a>
+                    )}
+                    {project.urls?.kickstarter && (
+                      <a href={project.urls.kickstarter} target="_blank" rel="noopener noreferrer" className="text-xs text-gray-500 hover:text-gray-900 underline underline-offset-2 transition-colors duration-200">Kickstarter</a>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
@@ -149,4 +122,4 @@ export const Projects: React.FC = React.memo(() => {
       </div>
     </section>
   );
-}); 
+});

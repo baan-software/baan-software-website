@@ -29,79 +29,96 @@ export const companyValues: IValue[] = [
   {
     title: 'Latest Technologies',
     description: 'We stay at the forefront of industry trends, integrating cutting-edge concepts and tools to deliver top-notch results.'
+  },
+  {
+    title: 'Transparency',
+    description: 'We keep communication open and honest throughout every project, so you always know where things stand.'
   }
 ];
 
 export const projects: IProject[] = [
   {
-    id: 'gymijet-app',
-    title: 'Gymijet App (US Only)',
-    description: 'A mobile app that guides the user\'s resistance bands workout. The app is using image processing & pose estimations to count exercises repetitions, validating the correctness of execution. The app also record the user\'s workout history, adjusting the resistance band type according to the user\'s performance and summarizing information regarding the results of the workouts.',
-    technologies: ['Flutter', 'MLKit'],
-    category: 'mobile',
+    id: 'gymijet',
+    title: 'Gymijet (US Only)',
+    description: 'A resistance bands workout platform using image processing and pose estimation to count reps, validate form, track history, and adjust training plans based on performance.',
+    image: '/projects/gymijet.png',
     engagement: 'full-development',
+    components: [
+      {
+        label: 'App',
+        description: 'Mobile app guiding resistance bands workouts with real-time pose estimation, rep counting, workout history, and adaptive training plans.',
+        technologies: ['Flutter', 'MLKit']
+      },
+      {
+        label: 'Backend',
+        description: 'Workout selection logic, performance-based plan adjustments, user management, authentication, push notifications, and subscriptions.',
+        technologies: ['Node.js', 'MongoDB']
+      }
+    ],
     urls: {
       appStore: 'https://apps.apple.com/il/app/gymijet/id6680193845',
       playStore: 'https://play.google.com/store/apps/details?id=com.gymijet.android&hl=en'
     }
   },
   {
-    id: 'gymijet-server',
-    title: 'Gymijet Server',
-    description: 'A backend server to compliment the application. The backend implementation contains all the workout selection logic and adjusting the plan according to the user\'s performance. Managing user base and authentication, push notifications, subscriptions and more.',
-    technologies: ['Node.js', 'MongoDB'],
-    category: 'backend',
-    engagement: 'full-development'
-  },
-  {
-    id: 'cookbash-app',
-    title: 'Cookbash App',
-    description: 'A mobile & web app that guides the user through the process of organizing a gathering with great food. The app allow the plan an event, select a preferred cuisine, invite friends, taking into account their food preferences - in order to create an amazing meal.',
-    technologies: ['Flutter'],
-    category: 'mobile',
+    id: 'cookbash',
+    title: 'Cookbash',
+    description: 'A platform for organizing gatherings with great food. Plan events, choose cuisines, invite friends, and account for food preferences to create the perfect meal.',
+    image: '/projects/cookbash.png',
     engagement: 'full-development',
+    components: [
+      {
+        label: 'App',
+        description: 'Mobile and web app for planning food-centered events, managing invitations, and handling dietary preferences.',
+        technologies: ['Flutter']
+      },
+      {
+        label: 'Website',
+        description: 'Marketing website showcasing recipes, chefs, and content with an integrated shop.',
+        technologies: ['NextJS', 'Strapi']
+      }
+    ],
     urls: {
+      website: 'https://www.cookbash.com',
       appStore: 'https://apps.apple.com/il/app/cookbash/id6479023085',
       playStore: 'https://play.google.com/store/apps/details?id=com.cookbash&hl=en&pli=1'
     }
   },
   {
-    id: 'cookbash-website',
-    title: 'Cookbash Website',
-    description: 'A marketing website that showcase recipes, chefs and content. The website contains a shop and information',
-    technologies: ['NextJS', 'Strapi'],
-    category: 'web',
+    id: 'storyball',
+    title: 'Storyball',
+    description: 'An innovative platform that transforms physical play into digital storytelling. A smart ball captures motion and sound, creating unique stories based on how children play.',
+    image: '/projects/storyball.png',
     engagement: 'full-development',
-    urls: {
-      website: 'https://www.cookbash.com'
-    }
-  },
-  {
-    id: 'storyball-app',
-    title: 'Storyball App',
-    description: 'An innovative mobile app that transforms physical play into digital storytelling. The app connects to a smart ball that captures motion and sound, creating unique stories based on how children play. Features include story generation, interactive gameplay, and parental controls. Note: This app is no longer available in app stores.',
-    technologies: ['Swift', 'Kotlin', 'Java'],
-    category: 'mobile',
-    engagement: 'full-development',
+    components: [
+      {
+        label: 'App',
+        description: 'Mobile app featuring story generation, interactive gameplay, and parental controls. No longer available in app stores.',
+        technologies: ['Swift', 'Kotlin', 'Java']
+      },
+      {
+        label: 'Backend',
+        description: 'Story generation algorithms, user data management, device synchronization, content delivery, and real-time data processing.',
+        technologies: ['Node.js', 'MongoDB']
+      }
+    ],
     urls: {
       kickstarter: 'https://www.kickstarter.com/projects/storyball/storyball-the-smart-ball-that-turns-play-into-stories'
     }
   },
   {
-    id: 'storyball-server',
-    title: 'Storyball Server',
-    description: 'A robust backend system that powers the Storyball ecosystem. Handles story generation algorithms, user data management, device synchronization, and content delivery. Implements secure authentication and real-time data processing for seamless interaction between the physical ball and digital storytelling experience.',
-    technologies: ['Node.js', 'MongoDB'],
-    category: 'backend',
-    engagement: 'full-development'
-  },
-  {
     id: 'punch-oclock',
     title: 'Punch O\'Clock',
-    description: 'A mobile time-tracking app for freelancers, contractors, and professionals. Track working hours across multiple projects, calculate earnings automatically, export reports to CSV and PDF, and sync data to the cloud. Features live activity support, offline mode, and support for all currencies.',
-    technologies: ['Flutter'],
-    category: 'mobile',
+    description: 'A time-tracking app for freelancers, contractors, and professionals. Track hours, calculate earnings, export reports, and sync to the cloud.',
+    image: '/projects/punch-oclock.png',
     engagement: 'in-house',
+    components: [
+      {
+        label: 'App',
+        description: 'Mobile app with multi-project tracking, automatic earnings calculation, CSV/PDF export, live activity support, offline mode, and multi-currency support.',
+        technologies: ['Flutter']
+      }
+    ],
     urls: {
       appStore: 'https://apps.apple.com/au/app/punch-oclock/id6756803931',
       playStore: 'https://play.google.com/store/apps/details?id=com.baansoftware.clock_punch&hl=en'
@@ -110,10 +127,16 @@ export const projects: IProject[] = [
   {
     id: 'shortica',
     title: 'Shortica',
-    description: 'A streaming app for short-form vertical dramas. Delivers cinematic episodes of 60-90 seconds with personalized recommendations, a coin-based unlocking system, daily rewards, and multilingual subtitle support.',
-    technologies: ['Flutter'],
-    category: 'mobile',
+    description: 'A streaming app for short-form vertical dramas with cinematic episodes, personalized recommendations, and multilingual subtitle support.',
+    image: '/projects/shortica.png',
     engagement: 'dev-as-a-service',
+    components: [
+      {
+        label: 'App',
+        description: 'Mobile app delivering 60-90 second episodes with a coin-based unlocking system, daily rewards, and personalized recommendations.',
+        technologies: ['Flutter']
+      }
+    ],
     urls: {
       appStore: 'https://apps.apple.com/br/app/shortica/id6754937808',
       playStore: 'https://play.google.com/store/apps/details?id=com.shortica.app&hl=en'
@@ -122,10 +145,16 @@ export const projects: IProject[] = [
   {
     id: 'flutter-animated-transitions',
     title: 'Flutter Animated Transitions',
-    description: 'An open-source library that provides a set of beautiful animated transitions for Flutter. The library is designed to be easy to use and customize and expandable.',
-    technologies: ['Flutter'],
-    category: 'mobile',
+    description: 'An open-source library providing beautiful, customizable animated transitions for Flutter.',
+    image: '/projects/flutter.png',
     engagement: 'in-house',
+    components: [
+      {
+        label: 'Library',
+        description: 'Easy to use, customize, and expand animated transition package for Flutter applications.',
+        technologies: ['Flutter']
+      }
+    ],
     urls: {
       website: 'https://pub.dev/packages/animated_transitions'
     }
@@ -145,12 +174,12 @@ export const siteData: ISiteData = {
     description: 'At Baan Software, we are dedicated to providing exceptional software development, product development, and technical solution services. Our mission is to help clients bring their ideas to life with high-quality, sustainable, and innovative technology.',
     buttons: {
       primary: {
-        text: 'Get Started',
+        text: 'Get In Touch',
         action: 'contact'
       },
       secondary: {
-        text: 'Learn More',
-        action: 'about'
+        text: 'Why Us?',
+        action: 'values'
       }
     }
   },

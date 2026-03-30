@@ -98,9 +98,6 @@ export default {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'gradient-hero': 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-        'gradient-accent': 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-        'gradient-success': 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
       },
       letterSpacing: {
         tighter: '-0.05em',
@@ -112,9 +109,6 @@ export default {
       animation: {
         'fade-in-up': 'fadeInUp 0.6s ease forwards',
         'slide-in': 'slideIn 0.3s ease',
-        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'bounce-slow': 'bounce 2s infinite',
-        'gradient': 'gradient 6s ease infinite',
       },
       keyframes: {
         fadeInUp: {
@@ -133,16 +127,6 @@ export default {
           },
           '100%': {
             transform: 'scaleX(1)',
-          },
-        },
-        gradient: {
-          '0%, 100%': {
-            'background-size': '200% 200%',
-            'background-position': 'left center'
-          },
-          '50%': {
-            'background-size': '200% 200%',
-            'background-position': 'right center'
           },
         },
       },

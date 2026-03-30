@@ -3,7 +3,7 @@ import { Header, Hero, About, Values, Projects, Contact } from '@/components';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-50 via-white to-accent-50">
+    <div className="min-h-screen bg-white">
       <Header />
       <main>
         <Hero />
@@ -12,6 +12,11 @@ const App: React.FC = () => {
         <Projects />
         <Contact />
       </main>
+      <footer className="py-8 border-t border-gray-200">
+        <div className="container text-center">
+          <p className="text-sm text-gray-400">&copy; {new Date().getFullYear()} Baan Software. All rights reserved.</p>
+        </div>
+      </footer>
     </div>
   );
 };

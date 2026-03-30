@@ -41,10 +41,10 @@ export const Header: React.FC = React.memo(() => {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-lg ${
-        isScrolled 
-          ? 'bg-white/95 border-b border-gray-200 shadow-lg' 
-          : 'bg-white/90 border-b border-transparent'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white ${
+        isScrolled
+          ? 'border-b border-gray-200'
+          : 'border-b border-transparent'
       }`}
     >
       <div className="container">
@@ -61,7 +61,7 @@ export const Header: React.FC = React.memo(() => {
                 filter: 'brightness(0) saturate(100%) invert(11%) sepia(9%) saturate(2148%) hue-rotate(181deg) brightness(95%) contrast(95%)'
               }}
             />
-            <span className="text-2xl font-bold text-primary-900 tracking-tight">
+            <span className="text-2xl font-bold text-gray-900 tracking-tight">
               {siteData.company.name}
             </span>
           </button>
@@ -72,15 +72,15 @@ export const Header: React.FC = React.memo(() => {
                 <li key={item.section}>
                   <button
                     onClick={() => handleNavClick(item)}
-                    className={`relative px-0 py-2 text-sm font-medium transition-colors duration-200 tracking-wide border-0 bg-transparent cursor-pointer ${
-                      activeSection === item.section 
-                        ? 'text-primary-900' 
-                        : 'text-gray-600 hover:text-primary-700'
+                    className={`relative px-0 py-2 text-sm font-medium transition-colors duration-200 border-0 bg-transparent cursor-pointer ${
+                      activeSection === item.section
+                        ? 'text-gray-900'
+                        : 'text-gray-400 hover:text-gray-900'
                     }`}
                   >
                     {item.label}
                     {activeSection === item.section && (
-                      <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary-700 animate-slide-in" />
+                      <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-gray-900 animate-slide-in" />
                     )}
                   </button>
                 </li>
