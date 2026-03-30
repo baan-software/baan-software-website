@@ -85,7 +85,7 @@ export const Projects: React.FC = React.memo(() => {
   };
 
   return (
-    <section id="projects" className="section bg-gradient-to-br from-gray-50 via-white to-primary-50/30 relative" ref={ref}>
+    <section id="projects" className="section relative" ref={ref}>
       {/* Background decorative elements */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-20 right-20 w-64 h-64 bg-gradient-to-r from-accent-300 to-primary-300 rounded-full mix-blend-multiply filter blur-xl"></div>

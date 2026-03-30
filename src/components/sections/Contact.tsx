@@ -6,7 +6,7 @@ export const Contact: React.FC = React.memo(() => {
   const { ref, inView } = useInView({ threshold: 0.1 });
 
   return (
-    <section id="contact" className="section bg-gradient-to-br from-primary-50 via-white to-accent-50 relative" ref={ref}>
+    <section id="contact" className="section relative" ref={ref}>
       {/* Background decorative elements */}
       <div className="absolute inset-0 opacity-25">
         <div className="absolute top-10 left-10 w-72 h-72 bg-gradient-to-r from-primary-300 to-accent-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse-slow"></div>

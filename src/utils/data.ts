@@ -127,7 +127,7 @@ export const projects: IProject[] = [
     category: 'mobile',
     engagement: 'in-house',
     urls: {
-      website: 'https://github.com/baan-software/flutter-animated-transitions'
+      website: 'https://pub.dev/packages/animated_transitions'
     }
   }
 ];
@@ -152,16 +152,6 @@ export const siteData: ISiteData = {
         text: 'Learn More',
         action: 'about'
       }
-    },
-    statistics: {
-      experience: {
-        value: '15+',
-        label: 'Years Experience'
-      },
-      projects: {
-        value: '9',
-        label: 'Major Projects'
-      }
     }
   },
   about: {
@@ -172,7 +162,7 @@ export const siteData: ISiteData = {
       experience: 'over 15 years'
     },
     description: [
-      'Baan Software was founded by Giora Vered, a software developer with over 15 years of experience. Giora has worked on a wide range of projects, including mobile and web applications, mobile SDKs, server-side systems, and more.',
+      'Baan Software was founded by Giora Vered, a software developer with over 15 years of experience, who has worked on a wide range of projects, including mobile and web applications, mobile SDKs, server-side systems, and more.',
       'Baan Software focuses on building reliable, well-structured solutions. Whether you\'re starting a new product, improving an existing one, or solving a technical problem, we can help you get it done.'
     ],
     expertise: [

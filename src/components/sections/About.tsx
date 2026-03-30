@@ -6,11 +6,15 @@ export const About: React.FC = React.memo(() => {
   const { ref, inView } = useInView({ threshold: 0.1 });
 
   return (
-    <section id="about" className="section bg-gray-50" ref={ref}>
+    <section id="about" className="section" ref={ref}>
       <div className="container">
         <div className="max-w-4xl mx-auto text-center">
           <div className={`space-y-8 ${inView ? 'animate-fade-in-up' : 'opacity-0'}`}>
-            <h2 className="text-primary-900">{siteData.about.title}</h2>
+            <h2 className="text-primary-900">
+              <span className="bg-gradient-to-r from-primary-600 via-accent-600 to-primary-800 bg-clip-text text-transparent">
+                {siteData.about.title}
+              </span>
+            </h2>
             
             <div className="space-y-6 text-left mb-16">
               {siteData.about.description.map((paragraph, index) => {

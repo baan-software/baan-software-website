@@ -12,16 +12,6 @@ export interface IHeroData {
       action: string;
     };
   };
-  statistics: {
-    experience: {
-      value: string;
-      label: string;
-    };
-    projects: {
-      value: string;
-      label: string;
-    };
-  };
 }
 
 export interface IAboutData {
