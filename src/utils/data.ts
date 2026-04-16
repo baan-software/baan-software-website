@@ -56,7 +56,7 @@ export const projects: IProject[] = [
       }
     ],
     urls: {
-      appStore: 'https://apps.apple.com/il/app/gymijet/id6680193845',
+      appStore: 'https://apps.apple.com/us/app/gymijet/id6680193845',
       playStore: 'https://play.google.com/store/apps/details?id=com.gymijet.android&hl=en'
     }
   },
@@ -80,7 +80,7 @@ export const projects: IProject[] = [
     ],
     urls: {
       website: 'https://www.cookbash.com',
-      appStore: 'https://apps.apple.com/il/app/cookbash/id6479023085',
+      appStore: 'https://apps.apple.com/us/app/cookbash/id6479023085',
       playStore: 'https://play.google.com/store/apps/details?id=com.cookbash&hl=en&pli=1'
     }
   },
@@ -122,6 +122,23 @@ export const projects: IProject[] = [
     urls: {
       appStore: 'https://apps.apple.com/au/app/punch-oclock/id6756803931',
       playStore: 'https://play.google.com/store/apps/details?id=com.baansoftware.clock_punch&hl=en'
+    }
+  },
+  {
+    id: 'language-board',
+    title: 'Language Board',
+    description: 'A word-learning game for toddlers and young children featuring 210 illustrated words across 21 themed categories. Each tap produces audio pronunciation to help build vocabulary naturally through interactive play.',
+    image: '/projects/language-board.png',
+    engagement: 'in-house',
+    components: [
+      {
+        label: 'App',
+        description: 'iOS app with 210 words and audio pronunciation across 21 categories, vintage-style illustrations, and a pressure-free learning experience optimized for small hands.',
+        technologies: ['Flutter']
+      }
+    ],
+    urls: {
+      appStore: 'https://apps.apple.com/us/app/language-board/id6760527772'
     }
   },
   {
