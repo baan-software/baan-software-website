@@ -67,9 +67,16 @@ export const Projects: React.FC = React.memo(() => {
                 </div>
 
                 <div className="flex-1 min-w-0">
-                  <div className="flex items-baseline justify-between mb-2">
-                    <h3 className="text-lg font-semibold">{project.title}</h3>
-                    <span className={`text-xs font-medium px-2.5 py-1 rounded shrink-0 ml-4 ${getEngagementColor(project.engagement)}`}>
+                  <div className="flex items-center justify-between gap-3 mb-2">
+                    <div className="flex items-center gap-3 min-w-0">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-10 h-10 rounded-lg object-contain shrink-0 md:hidden"
+                      />
+                      <h3 className="text-lg font-semibold truncate">{project.title}</h3>
+                    </div>
+                    <span className={`text-xs font-medium px-2.5 py-1 rounded shrink-0 ${getEngagementColor(project.engagement)}`}>
                       {getEngagementLabel(project.engagement)}
                     </span>
                   </div>

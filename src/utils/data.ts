@@ -142,6 +142,23 @@ export const projects: IProject[] = [
     }
   },
   {
+    id: 'bubble-pop',
+    title: 'Bubble Pop: Tap Challenge',
+    description: 'A casual arcade game where players tap bubbles to beat the clock. Progressive difficulty with faster, smaller, and denser bubbles keeps the challenge intensifying across stages.',
+    image: '/projects/bubble-pop.png',
+    engagement: 'in-house',
+    components: [
+      {
+        label: 'App',
+        description: 'iOS game featuring time-based tap gameplay, progressive difficulty scaling, and increasingly challenging bubble patterns that test speed and accuracy.',
+        technologies: ['Flutter']
+      }
+    ],
+    urls: {
+      appStore: 'https://apps.apple.com/us/app/bubble-pop-tap-challenge/id6759165656'
+    }
+  },
+  {
     id: 'shortica',
     title: 'Shortica',
     description: 'A streaming app for short-form vertical dramas with cinematic episodes, personalized recommendations, and multilingual subtitle support.',
