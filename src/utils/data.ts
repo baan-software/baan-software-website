@@ -85,6 +85,24 @@ export const projects: IProject[] = [
     }
   },
   {
+    id: 'shortica',
+    title: 'Shortica',
+    description: 'A streaming app for short-form vertical dramas with cinematic episodes, personalized recommendations, and multilingual subtitle support.',
+    image: '/projects/shortica.png',
+    engagement: 'dev-as-a-service',
+    components: [
+      {
+        label: 'App',
+        description: 'Mobile app delivering 60-90 second episodes with a coin-based unlocking system, daily rewards, and personalized recommendations.',
+        technologies: ['Flutter']
+      }
+    ],
+    urls: {
+      appStore: 'https://apps.apple.com/br/app/shortica/id6754937808',
+      playStore: 'https://play.google.com/store/apps/details?id=com.shortica.app&hl=en'
+    }
+  },
+  {
     id: 'storyball',
     title: 'Storyball',
     description: 'An innovative platform that transforms physical play into digital storytelling. A smart ball captures motion and sound, creating unique stories based on how children play.',
@@ -103,7 +121,7 @@ export const projects: IProject[] = [
       }
     ],
     urls: {
-      kickstarter: 'https://www.kickstarter.com/projects/storyball/storyball-the-smart-ball-that-turns-play-into-stories'
+      kickstarter: 'https://www.kickstarter.com/projects/848480002/storyball-the-screen-free-smart-toy-that-keeps-kid'
     }
   },
   {
@@ -156,24 +174,6 @@ export const projects: IProject[] = [
     ],
     urls: {
       appStore: 'https://apps.apple.com/us/app/bubble-pop-tap-challenge/id6759165656'
-    }
-  },
-  {
-    id: 'shortica',
-    title: 'Shortica',
-    description: 'A streaming app for short-form vertical dramas with cinematic episodes, personalized recommendations, and multilingual subtitle support.',
-    image: '/projects/shortica.png',
-    engagement: 'dev-as-a-service',
-    components: [
-      {
-        label: 'App',
-        description: 'Mobile app delivering 60-90 second episodes with a coin-based unlocking system, daily rewards, and personalized recommendations.',
-        technologies: ['Flutter']
-      }
-    ],
-    urls: {
-      appStore: 'https://apps.apple.com/br/app/shortica/id6754937808',
-      playStore: 'https://play.google.com/store/apps/details?id=com.shortica.app&hl=en'
     }
   },
   {
