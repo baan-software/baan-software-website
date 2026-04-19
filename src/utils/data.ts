@@ -58,7 +58,14 @@ export const projects: IProject[] = [
     urls: {
       appStore: 'https://apps.apple.com/us/app/gymijet/id6680193845',
       playStore: 'https://play.google.com/store/apps/details?id=com.gymijet.android&hl=en'
-    }
+    },
+    screenshots: [
+      'projects/screenshots/gymijet/1.0.webp',
+      'projects/screenshots/gymijet/2.0.webp',
+      'projects/screenshots/gymijet/3.0.webp',
+      'projects/screenshots/gymijet/4.0.webp',
+      'projects/screenshots/gymijet/5.0.webp'
+    ]
   },
   {
     id: 'cookbash',
@@ -82,7 +89,12 @@ export const projects: IProject[] = [
       website: 'https://www.cookbash.com',
       appStore: 'https://apps.apple.com/us/app/cookbash/id6479023085',
       playStore: 'https://play.google.com/store/apps/details?id=com.cookbash&hl=en&pli=1'
-    }
+    },
+    screenshots: [
+      '/projects/screenshots/cookbash/01.webp',
+      '/projects/screenshots/cookbash/02.webp',
+      '/projects/screenshots/cookbash/03.webp'
+    ]
   },
   {
     id: 'shortica',
@@ -122,7 +134,13 @@ export const projects: IProject[] = [
     ],
     urls: {
       kickstarter: 'https://www.kickstarter.com/projects/848480002/storyball-the-screen-free-smart-toy-that-keeps-kid'
-    }
+    },
+    screenshots: [
+      'projects/screenshots/storyball/1.0.png',
+      'projects/screenshots/storyball/2.0.png',
+      'projects/screenshots/storyball/3.0.png',
+      'projects/screenshots/storyball/4.0.png'
+    ]
   },
   {
     id: 'punch-oclock',
@@ -140,7 +158,18 @@ export const projects: IProject[] = [
     urls: {
       appStore: 'https://apps.apple.com/au/app/punch-oclock/id6756803931',
       playStore: 'https://play.google.com/store/apps/details?id=com.baansoftware.clock_punch&hl=en'
-    }
+    },
+    screenshots: [
+      'projects/screenshots/punch-oclock/1.0.png',
+      'projects/screenshots/punch-oclock/2.0.png',
+      'projects/screenshots/punch-oclock/3.0.png',
+      'projects/screenshots/punch-oclock/4.0.png',
+      'projects/screenshots/punch-oclock/5.0.png',
+      'projects/screenshots/punch-oclock/6.0.png',
+      'projects/screenshots/punch-oclock/7.0.png',
+      'projects/screenshots/punch-oclock/8.0.png',
+      'projects/screenshots/punch-oclock/9.0.png'
+    ]
   },
   {
     id: 'language-board',
@@ -157,7 +186,14 @@ export const projects: IProject[] = [
     ],
     urls: {
       appStore: 'https://apps.apple.com/us/app/language-board/id6760527772'
-    }
+    },
+    screenshots: [
+      'projects/screenshots/language-board/1.0.png',
+      'projects/screenshots/language-board/2.0.png',
+      'projects/screenshots/language-board/3.0.png',
+      'projects/screenshots/language-board/4.0.png',
+      'projects/screenshots/language-board/5.0.png',
+    ]
   },
   {
     id: 'bubble-pop',
@@ -174,7 +210,14 @@ export const projects: IProject[] = [
     ],
     urls: {
       appStore: 'https://apps.apple.com/us/app/bubble-pop-tap-challenge/id6759165656'
-    }
+    },
+    screenshots: [
+      'projects/screenshots/bubble-pop/1.0.webp',
+      'projects/screenshots/bubble-pop/2.0.webp',
+      'projects/screenshots/bubble-pop/3.0.webp',
+      'projects/screenshots/bubble-pop/4.0.webp',
+      'projects/screenshots/bubble-pop/5.0.webp',
+    ]
   },
   {
     id: 'flutter-animated-transitions',

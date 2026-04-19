@@ -109,6 +109,7 @@ export default {
       animation: {
         'fade-in-up': 'fadeInUp 0.6s ease forwards',
         'slide-in': 'slideIn 0.3s ease',
+        'fade-in': 'fadeIn 0.2s ease forwards',
       },
       keyframes: {
         fadeInUp: {
@@ -128,6 +129,10 @@ export default {
           '100%': {
             transform: 'scaleX(1)',
           },
+        },
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
         },
       },
     },

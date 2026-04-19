@@ -17,4 +17,5 @@ export interface IProject {
     playStore?: string;
     kickstarter?: string;
   };
+  screenshots?: string[];
 }

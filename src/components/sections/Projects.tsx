@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { projects, siteData } from '@/utils';
+import { IProject } from '@/types';
+import { ScreenshotsButton, ScreenshotsModal, ScreenshotsThumbnails } from '@/components/common';
+
+interface ActiveView {
+  project: IProject;
+  initialIndex: number;
+}
 
 export const Projects: React.FC = React.memo(() => {
   const { ref, inView } = useInView({ threshold: 0.1 });
+  const [activeView, setActiveView] = useState<ActiveView | null>(null);
+
+  const openAt = (project: IProject, initialIndex: number): void => {
+    setActiveView({ project, initialIndex });
+  };
 
   const getEngagementLabel = (engagement: string): string => {
     switch (engagement) {
@@ -55,28 +67,37 @@ export const Projects: React.FC = React.memo(() => {
             {projects.map((project, index) => (
               <div
                 key={project.id}
-                className={`flex gap-8 p-6 rounded transition-all duration-200 hover:scale-[1.01] ${pastelColors[index % pastelColors.length]} ${inView ? 'animate-fade-in-up' : 'opacity-0'}`}
+                className={`flex gap-8 p-6 rounded border border-gray-200 transition-all duration-200 hover:scale-[1.01] ${pastelColors[index % pastelColors.length]} ${inView ? 'animate-fade-in-up' : 'opacity-0'}`}
                 style={{ animationDelay: `${index * 0.08}s` }}
               >
-                <div className="w-64 h-44 rounded-lg border border-gray-200/60 shrink-0 hidden md:flex items-center justify-center p-6">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="max-w-full max-h-full object-contain rounded-[22px]"
-                  />
+                <div className="w-64 shrink-0 hidden md:flex flex-col gap-2">
+                  <div className="h-44 rounded-lg border border-gray-200/60 flex items-center justify-center p-6">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="max-w-full max-h-full object-contain rounded-[22px]"
+                    />
+                  </div>
+                  {project.screenshots && project.screenshots.length > 0 && (
+                    <ScreenshotsThumbnails
+                      projectTitle={project.title}
+                      screenshots={project.screenshots}
+                      onSelect={(idx) => openAt(project, idx)}
+                    />
+                  )}
                 </div>
 
                 <div className="flex-1 min-w-0">
-                  <div className="flex items-center justify-between gap-3 mb-2">
-                    <div className="flex items-center gap-3 min-w-0">
+                  <div className="flex items-center gap-3 md:items-start md:justify-between mb-2">
+                    <div className="flex items-center gap-3 min-w-0 md:flex-1">
                       <img
                         src={project.image}
                         alt={project.title}
                         className="w-10 h-10 rounded-lg object-contain shrink-0 md:hidden"
                       />
-                      <h3 className="text-lg font-semibold truncate">{project.title}</h3>
+                      <h3 className="text-lg font-semibold">{project.title}</h3>
                     </div>
-                    <span className={`text-xs font-medium px-2.5 py-1 rounded shrink-0 ${getEngagementColor(project.engagement)}`}>
+                    <span className={`hidden md:inline-block text-xs font-medium px-2.5 py-1 rounded shrink-0 ${getEngagementColor(project.engagement)}`}>
                       {getEngagementLabel(project.engagement)}
                     </span>
                   </div>
@@ -107,7 +128,12 @@ export const Projects: React.FC = React.memo(() => {
                     </div>
                   )}
 
-                  <div className="flex flex-wrap items-center gap-2">
+                  <div className="flex flex-wrap items-baseline gap-2">
+                    {project.screenshots && project.screenshots.length > 0 && (
+                      <span className="md:hidden">
+                        <ScreenshotsButton onClick={() => openAt(project, 0)} />
+                      </span>
+                    )}
                     {project.urls?.website && (
                       <a href={project.urls.website} target="_blank" rel="noopener noreferrer" className="text-xs text-gray-500 hover:text-gray-900 underline underline-offset-2 transition-colors duration-200">Website</a>
                     )}
@@ -121,12 +147,27 @@ export const Projects: React.FC = React.memo(() => {
                       <a href={project.urls.kickstarter} target="_blank" rel="noopener noreferrer" className="text-xs text-gray-500 hover:text-gray-900 underline underline-offset-2 transition-colors duration-200">Kickstarter</a>
                     )}
                   </div>
+
+                  <div className="mt-3 md:hidden">
+                    <span className={`inline-block text-xs font-medium px-2.5 py-1 rounded ${getEngagementColor(project.engagement)}`}>
+                      {getEngagementLabel(project.engagement)}
+                    </span>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </div>
+
+      {activeView && activeView.project.screenshots && (
+        <ScreenshotsModal
+          projectTitle={activeView.project.title}
+          screenshots={activeView.project.screenshots}
+          initialIndex={activeView.initialIndex}
+          onClose={() => setActiveView(null)}
+        />
+      )}
     </section>
   );
 });
