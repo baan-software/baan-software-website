@@ -143,6 +143,35 @@ export const projects: IProject[] = [
     ]
   },
   {
+    id: 'outfit-check',
+    title: 'Outfit Check: Style Matcher',
+    description: 'A quick second opinion on your outfit\'s color and style coordination. AI analyzes color harmony and item consistency, then returns a GO / ALMOST / RETHINK verdict with brief notes grounded in color theory and specific swap suggestions.',
+    image: '/projects/outfit-check.png',
+    engagement: 'full-development',
+    components: [
+      {
+        label: 'App',
+        description: 'Mobile app delivering instant AI-powered outfit feedback with no sign-up. Privacy-first: photos are processed only to generate feedback and are not used for training.',
+        technologies: ['Flutter']
+      },
+      {
+        label: 'Backend',
+        description: 'Serverless image analysis pipeline running color and style consistency checks, returning structured verdicts with reasoning notes.',
+        technologies: ['Cloud Functions', 'Firebase']
+      }
+    ],
+    urls: {
+      appStore: 'https://apps.apple.com/us/app/outfit-check-style-matcher/id6762867885'
+    },
+    screenshots: [
+      'projects/screenshots/outfit-check/01.webp',
+      'projects/screenshots/outfit-check/02.webp',
+      'projects/screenshots/outfit-check/03.webp',
+      'projects/screenshots/outfit-check/04.webp',
+      'projects/screenshots/outfit-check/05.webp',
+    ]
+  },
+  {
     id: 'punch-oclock',
     title: 'Punch O\'Clock',
     description: 'A time-tracking app for freelancers, contractors, and professionals. Track hours, calculate earnings, export reports, and sync to the cloud.',
@@ -153,6 +182,11 @@ export const projects: IProject[] = [
         label: 'App',
         description: 'Mobile app with multi-project tracking, automatic earnings calculation, CSV/PDF export, live activity support, offline mode, and multi-currency support.',
         technologies: ['Flutter']
+      },
+      {
+        label: 'Backend',
+        description: 'Cloud sync, authentication, and cross-device data persistence for tracked hours and project records.',
+        technologies: ['Firebase']
       }
     ],
     urls: {
