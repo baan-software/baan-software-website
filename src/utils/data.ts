@@ -107,6 +107,11 @@ export const projects: IProject[] = [
         label: 'App',
         description: 'Mobile app delivering 60-90 second episodes with a coin-based unlocking system, daily rewards, and personalized recommendations.',
         technologies: ['Flutter']
+      },
+      {
+        label: 'Backend',
+        description: 'API powering content delivery, episode unlocking, coin economy, daily rewards, and personalized recommendations.',
+        technologies: ['Fastify']
       }
     ],
     urls: {
