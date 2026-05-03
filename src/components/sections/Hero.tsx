@@ -21,7 +21,7 @@ export const Hero: React.FC = React.memo(() => {
 
 
   return (
-    <section id="home" className="section section-hero pt-32 relative" ref={ref}>
+    <section id="home" className="section section-hero pt-32 pb-24 relative" ref={ref}>
       <div className="container">
         <div className={`max-w-2xl mx-auto text-center space-y-6 ${isLoaded && inView ? 'animate-fade-in-up' : 'opacity-0'}`}>
           <h1>{siteData.hero.title}</h1>

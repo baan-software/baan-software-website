@@ -97,6 +97,35 @@ export const projects: IProject[] = [
     ]
   },
   {
+    id: 'posty',
+    title: 'Posty: AI Content Companion',
+    description: 'An AI-powered Instagram content tool for small business owners. Connects to Instagram, learns your voice from past posts, and generates on-brand post ideas, captions, and images you can publish in seconds.',
+    image: '/projects/posty.png',
+    engagement: 'full-development',
+    components: [
+      {
+        label: 'App',
+        description: 'Mobile app delivering tailored post ideas and AI-generated captions and images based on your Instagram style. Sign in with Apple to start instantly, with a freemium model offering free generations and an unlimited subscription tier.',
+        technologies: ['Flutter']
+      },
+      {
+        label: 'Backend',
+        description: 'API analyzing past Instagram posts to learn voice and tone, generating on-brand ideas, captions, and AI images, with Meta API integration for Instagram connectivity.',
+        technologies: ['NestJS', 'Meta API']
+      }
+    ],
+    urls: {
+      appStore: 'https://apps.apple.com/us/app/posty-ai-content-companion/id6758053900'
+    },
+    screenshots: [
+      'projects/screenshots/posty/1.0.webp',
+      'projects/screenshots/posty/2.0.webp',
+      'projects/screenshots/posty/3.0.webp',
+      'projects/screenshots/posty/4.0.webp',
+      'projects/screenshots/posty/5.0.webp'
+    ]
+  },
+  {
     id: 'shortica',
     title: 'Shortica',
     description: 'A streaming app for short-form vertical dramas with cinematic episodes, personalized recommendations, and multilingual subtitle support.',
@@ -121,7 +150,7 @@ export const projects: IProject[] = [
   },
   {
     id: 'storyball',
-    title: 'Storyball',
+    title: 'Storyball (Discontinued)',
     description: 'An innovative platform that transforms physical play into digital storytelling. A smart ball captures motion and sound, creating unique stories based on how children play.',
     image: '/projects/storyball.png',
     engagement: 'full-development',
